@@ -43,6 +43,7 @@ def predict():
 			# generate an ID for the classification then add the
 			# classification ID + image to the queue
 			k = str(uuid.uuid4())
+			print(k)
 			d = {"id": k, "image": base64_encode_image(image)}
 			db.rpush(IMAGE_QUEUE, json.dumps(d))
 
