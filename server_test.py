@@ -88,4 +88,4 @@ if __name__ == "__main__":
 
 	# start the web server
 	print("* Starting web service...")
-	app.run(host='0.0.0.0')
+	app.run(host='0.0.0.0', port=80)
