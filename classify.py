@@ -12,7 +12,7 @@ model = None
 IMAGE_WIDTH = 224
 IMAGE_HEIGHT = 224
 IMAGE_CHANS = 3
-IMAGE_DTYPE = "float32"
+IMAGE_DTYPE = "np.float32"
 
 # initialize constants used for server queuing
 IMAGE_QUEUE = "image_queue"
@@ -38,10 +38,11 @@ def classify_process():
 
         # loop over the queue
         for q in queue:
-            print('test')
             # deserialize the object and obtain the input image
-            q = json.loads(q.decode("utf-8"))
-            image = base64_decode_image(q["image"], IMAGE_DTYPE,
+
+            q = json.loads(q.decode())
+
+            image = base64_decode_image(q["image"], np.float32,
                 (1, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_CHANS))
 
         	# check to see if the batch list is None
@@ -66,6 +67,7 @@ def classify_process():
         	# results from our model
             for (imageID, result) in zip(imageIDs, results):
         		# # initialize the list of output predictions
+                print(imageID, result)
                 label = 'hot dog' if result[0] > .5 else 'not_hot_dog'
                 output = []
                 r = {"label": label, "probability": float(result)}
