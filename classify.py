@@ -3,6 +3,7 @@ import uuid
 import numpy as np
 from keras.models import load_model
 from process_image import *
+import json
 
 #initalize redis store and model variable
 db = redis.StrictRedis(host="localhost", port=6379, db=0)

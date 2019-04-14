@@ -7,7 +7,6 @@
 from threading import Thread
 import urllib
 import numpy as np
-import json
 import flask
 import sys
 import io
