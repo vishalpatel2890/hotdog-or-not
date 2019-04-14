@@ -4,11 +4,11 @@ import numpy as np
 from keras.models import load_model
 from process_image import *
 
+#initalize redis store and model variable
 db = redis.StrictRedis(host="localhost", port=6379, db=0)
 model = None
 
-# initialize constants used to control image spatial dimensions and
-# data type
+# initialize constants used to control image spatial dimensions and data type
 IMAGE_WIDTH = 224
 IMAGE_HEIGHT = 224
 IMAGE_CHANS = 3
@@ -39,7 +39,6 @@ def classify_process():
         # loop over the queue
         for q in queue:
             # deserialize the object and obtain the input image
-
             q = json.loads(q.decode())
 
             image = base64_decode_image(q["image"], np.float32,
