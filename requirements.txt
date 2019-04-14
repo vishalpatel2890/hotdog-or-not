@@ -2,8 +2,7 @@ absl-py==0.6.1
 appnope==0.1.0
 astor==0.7.1
 backcall==0.1.0
-bleach==3.0.2
-certifi==2018.11.29
+bleach==3.0.2x
 chardet==3.0.4
 Click==7.0
 decorator==4.3.0
@@ -31,10 +30,6 @@ Keras-Preprocessing==1.0.5
 Markdown==3.0.1
 MarkupSafe==1.1.0
 mistune==0.8.4
-mkl-fft==1.0.10
-mkl-random==1.0.2
-nb-conda==2.2.1
-nb-conda-kernels==2.2.0
 nbconvert==5.3.1
 nbformat==4.4.0
 notebook==5.7.4

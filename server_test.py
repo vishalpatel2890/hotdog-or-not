@@ -8,7 +8,7 @@
 
 # import the necessary packages
 from threading import Thread
-from PIL import Image
+import urllib
 import numpy as np
 import flask
 import sys
@@ -29,22 +29,26 @@ def predict():
 
 	# ensure an image was properly uploaded to our endpoint
 	if flask.request.method == "POST":
-		if flask.request.files.get("image"):
-			# read the image in PIL format and prepare it for
-			# classification
-			image = flask.request.files["image"].read()
-			image = Image.open(io.BytesIO(image))
-			image = prepare_image(image, (IMAGE_WIDTH, IMAGE_HEIGHT))
+		if flask.request.get_data("image"):
+			image = flask.request.get_data("image")
+			image = image.decode('utf-8')
+			image = urllib.parse.unquote(image)
+			print(image[6:])
+			# read the image in PIL format and prepare it for vclassification
+			# image = flask.request.files["image"]
+			# image = flask.request.files['image']
+
+			image = prepare_image(image[6:], (IMAGE_WIDTH, IMAGE_HEIGHT))
 
 			# ensure our NumPy array is C-contiguous as well,
 			# otherwise we won't be able to serialize it
-			image = image.copy(order="C")
+			# image = image.copy(order="C")
 
 			# generate an ID for the classification then add the
 			# classification ID + image to the queue
 			k = str(uuid.uuid4())
-			print(k)
 			d = {"id": k, "image": base64_encode_image(image)}
+
 			db.rpush(IMAGE_QUEUE, json.dumps(d))
 
 			# keep looping until our model server returns the output
@@ -60,7 +64,6 @@ def predict():
  					# dictionary so we can return it to the client
 					output = output.decode("utf-8")
 					data["predictions"] = json.loads(output)
-
 					# delete the result from the database and break
 					# from the polling loop
 					db.delete(k)
@@ -89,3 +92,9 @@ if __name__ == "__main__":
 	# start the web server
 	print("* Starting web service...")
 	app.run(host='0.0.0.0', port=80)
+
+#to run on ec2
+#connect to ec2 instance
+#git clone repo to instance
+#launch redis with redis-server (check with redis-cli ping)
+#launch server with sudo python server_test.py
