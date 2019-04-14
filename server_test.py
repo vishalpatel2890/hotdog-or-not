@@ -1,10 +1,7 @@
 # USAGE
 # Start the server:
 # 	python run_keras_server.py
-# Submit a request via cURL:
-# 	curl -X POST -F image=@jemma.png 'http://localhost:5000/predict'
-# Submita a request via Python:
-#	python simple_request.py
+# r = requests.post('http://ec2-13-58-68-35.us-east-2.compute.amazonaws.com/predict', data={'image':url}).json()
 
 # import the necessary packages
 from threading import Thread
@@ -17,8 +14,6 @@ import io
 from process_image import *
 from classify import *
 
-
-
 # initialize our Flask application, Redis server, and Keras model
 app = flask.Flask(__name__)
 
@@ -27,22 +22,15 @@ def predict():
 	# initialize the data dictionary that will be returned from the view
 	data = {"success": False}
 
-	# ensure an image was properly uploaded to our endpoint
+	# ensure an image url was properly uploaded to our endpoint
 	if flask.request.method == "POST":
 		if flask.request.get_data("image"):
+			#get image url and pass to prepare_image
 			image = flask.request.get_data("image")
 			image = image.decode('utf-8')
 			image = urllib.parse.unquote(image)
-			print(image[6:])
-			# read the image in PIL format and prepare it for vclassification
-			# image = flask.request.files["image"]
-			# image = flask.request.files['image']
 
 			image = prepare_image(image[6:], (IMAGE_WIDTH, IMAGE_HEIGHT))
-
-			# ensure our NumPy array is C-contiguous as well,
-			# otherwise we won't be able to serialize it
-			# image = image.copy(order="C")
 
 			# generate an ID for the classification then add the
 			# classification ID + image to the queue
@@ -51,14 +39,12 @@ def predict():
 
 			db.rpush(IMAGE_QUEUE, json.dumps(d))
 
-			# keep looping until our model server returns the output
-			# predictions
+			# keep looping until our model server returns the output predictions
 			while True:
 				# attempt to grab the output predictions
 				output = db.get(k)
 
-				# check to see if our model has classified the input
-				# image
+				# check to see if our model has classified the input image
 				if output is not None:
  					# add the output predictions to our data
  					# dictionary so we can return it to the client
