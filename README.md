@@ -11,13 +11,13 @@ Our training process is available in [base_model.ipynb](https://github.com/visha
 
 We began the process by training a simple denseley connected network to establish a base level of performance. Next, we assembled a simple convultional neural network with the following aritechture: 
 
-1. Conv2D | activation: 'relu' 
+1. Conv2D       | activation: 'relu' 
 2. MaxPooling2D | window: (2, 2)
-3. Conv2D | Nodes: 32, filter: (3, 3), activation:'relu'
+3. Conv2D       | Nodes: 32, filter: (3, 3), activation:'relu'
 4. MaxPooling2D | window:(2, 2)
 5. Flatten
-6. Dense | Nodes: 32, activation:'relu'
-7. Dense| Nodes: 1, activation:'sigmoid'
+6. Dense        | Nodes: 32, activation:'relu'
+7. Dense        | Nodes: 1, activation:'sigmoid'
 
 #### Training Results
 | Neural Network   | Traing Accuracy     | Testing Accuracy     | F1 Score     |
