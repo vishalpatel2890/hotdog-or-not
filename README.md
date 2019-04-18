@@ -9,9 +9,9 @@ This started as a group project while I was a student at the Flatiron School Dat
 ### Training Process
 Our training process is available in [base_model.ipynb](https://github.com/vishalpatel2890/hotdog-or-not/blob/master/base_model.ipynb). 
 
-We began the process by training a simple denseley connected network to establish a base level of performance. 
+We began the process by training a simple denseley connected network to establish a base level of performance. Next, we manually 
 
-### Training Results
+#### Training Results
 | Neural Network   | Traing Accuracy     | Testing Accuracy     | F1 Score     |
 | -----            | ----                | -----                | -----        |
 | Densely Connected| ----                | -----                | -----        |
