@@ -12,6 +12,9 @@ Our training process is available in [base_model.ipynb](https://github.com/visha
 
 We began the process by training a simple densely connected network to establish a base level of performance. Next, we assembled a simple convolutional neural network with the following architecture: 
 
+1. Dense --------> nodes: 28, activation:'relu'
+2. Dense --------> nodes: 64, activation:'relu'
+3. Dense --------> nodes: 1, activation:'sigmoid'
 
 1. Conv2D -------> activation: 'relu' 
 2. MaxPooling2D -> window: (2, 2)
