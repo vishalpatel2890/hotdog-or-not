@@ -13,7 +13,7 @@ Our training process is available in [base_model.ipynb](https://github.com/visha
 We began the process by training a simple densely connected network to establish a base level of performance. Next, we assembled a simple convolutional neural network with the following architecture: 
 
 | Layer (type)  |      Output Shape    | Param #   |
-|----------|:-------------:|------:|
+|----------|:-------------:|------|
 dense_17 (Dense)       |      (None, 128)       |        19267712  
 dense_18 (Dense)    |         (None, 64)         |       8256      
 dense_19 (Dense)      |       (None, 1)       |          65        
@@ -27,7 +27,7 @@ Next we assembled a simple convolutional neural network:
 
                               
 | Layer (type)  |      Output Shape    | Param #   |
-|----------|:-------------:|------:|
+|----------|:-------------:|------|
 conv2d_1 (Conv2D)    |        (None, 222, 222, 64)  |    1792      
 max_pooling2d_1 (MaxPooling2) | (None, 111, 111, 64) |     0         
 conv2d_2 (Conv2D)       |     (None, 109, 109, 32)  |    18464     
