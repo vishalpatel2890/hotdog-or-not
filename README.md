@@ -36,7 +36,9 @@ conv2d_2 (Conv2D)       |     (None, 109, 109, 32)  |    18464
 max_pooling2d_2 (MaxPooling2) | (None, 54, 54, 32)    |    0         
 flatten_1 (Flatten)  |        (None, 93312)   |          0         
 dense_4 (Dense)     |         (None, 32)      |          2986016   
-dense_5 (Dense)    |          (None, 1)        |         33   _________________________________________________________________
+dense_5 (Dense)    |          (None, 1)        |         33 
+
+_________________________________________________________________
 Total params: 3,006,305
 Trainable params: 3,006,305
 Non-trainable params: 0
