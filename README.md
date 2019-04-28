@@ -12,14 +12,12 @@ Our training process is available in [base_model.ipynb](https://github.com/visha
 
 We began the process by training a simple densely connected network to establish a base level of performance. Next, we assembled a simple convolutional neural network with the following architecture: 
 
-Layer (type)                 Output Shape              Param #
-_________________________________________________________________
-dense_17 (Dense)             (None, 128)               19267712  
-_________________________________________________________________
-dense_18 (Dense)             (None, 64)                8256      
-_________________________________________________________________
-dense_19 (Dense)             (None, 1)                 65        
-_________________________________________________________________
+Laye| Layer (type)  |      Output Shape    | Param #   |
+|----------|:-------------:|------:|
+dense_17 (Dense)       |      (None, 128)       |        19267712  
+dense_18 (Dense)    |         (None, 64)         |       8256      
+dense_19 (Dense)      |       (None, 1)       |          65        
+
 Total params: 19,276,033
 Trainable params: 19,276,033
 Non-trainable params: 0
@@ -38,10 +36,10 @@ flatten_1 (Flatten)  |        (None, 93312)   |          0
 dense_4 (Dense)     |         (None, 32)      |          2986016   
 dense_5 (Dense)    |          (None, 1)        |         33 
 
-_________________________________________________________________
 Total params: 3,006,305
 Trainable params: 3,006,305
 Non-trainable params: 0
+_________________________________________________________________
 
 We also tested this model with a dropout layer after the flatten layer. 
 
