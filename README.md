@@ -51,9 +51,9 @@ The following arcitechture was our final model.
 #### Training Results
 | Neural Network   | Traing Accuracy     | Testing Accuracy     | F1 Score     |
 | -----            | ----                | -----                | -----        |
-| Densely Connected| ----                | -----                | -----        |
-| CNN              | ----                | -----                | -----        |
-| CNN W/ Dropout   | ----                | -----                | -----        |
+| Densely Connected| 71.39%              | 66.40%               | .3926        |
+| CNN              | 82.99%              | 68.66%               | .3885        |
+| CNN W/ Dropout   | 88.54%              | 67.19%               | .4402        |
 | Inception V3     | ----                | -----                | -----        |
 | ResNet50         | ----                | -----                | -----        |
 | VGG16            | ----                | -----                | -----        |
