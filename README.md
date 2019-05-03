@@ -49,7 +49,7 @@ The following arcitechture was our final model.
 
 
 #### Training Results
-| Neural Network   | Traing Accuracy     | Testing Accuracy     | F1 Score     |
+| Neural Network   | Training Accuracy     | Testing Accuracy     | F1 Score     |
 | -----            | ----                | -----                | -----        |
 | Densely Connected| 71.39%              | 66.40%               | .3926        |
 | CNN              | 82.99%              | 68.66%               | .3885        |
