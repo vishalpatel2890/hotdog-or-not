@@ -43,10 +43,11 @@ _________________________________________________________________
 
 We also tested this model with a dropout layer after the flatten layer. 
 
-Last we made use of several transfer learning models. We used Inception V3, ResNet50, and VGG16 with Inception V3 giving us the best results (measured by testing accucary and F1 score). 
+Last we made use of several transfer learning models. We used Inception V3, ResNet50, and VGG16 with Inception V3 giving us the best results (measured by testing accuracy and F1 score). 
 
-The arcitechture for our final model is available here: [Inception V3 Model](https://github.com/vishalpatel2890/hotdog-or-not/blob/master/imagenet_modelsummary.txt)
+The architecture for our final model is available here: [Inception V3 Model](https://github.com/vishalpatel2890/hotdog-or-not/blob/master/imagenet_modelsummary.txt)
 
+The table below outlines the training and testing accuracies and F1 scores of our various models. 
 
 #### Training Results
 | Neural Network   | Training Accuracy     | Testing Accuracy     | F1 Score     |
@@ -59,11 +60,11 @@ The arcitechture for our final model is available here: [Inception V3 Model](htt
 | VGG16            | 93.06%              | 82.91%               | .7479        |
 
 #### Model API 
-server_test.py contians the code for setting up a Flask REST API for our model that if given a url to an image it will return whether the image is a hot dog or not. This repo can be cloned into an AWS EC2 instance or any cloud computing service and server can be spun up to serve our image classification model. 
+server_test.py contains the code for setting up a Flask REST API for our model that if given a url to an image it will return whether the image is a hot dog or not. This repo can be cloned into an AWS EC2 instance or any cloud computing service and server can be spun up to serve our image classification model. 
 
 #### Next Steps 
 - develop our model by adding layers the Inception V3 transfer model
 - attempt to collect a much larger collection of hot dog images and train a large CNN from scratch
-- build a mobile (React Native) app to allow users to take pictures and recieve a classification of hot dog or not
+- build a mobile (React Native) app to allow users to take pictures and receive a classification of hot dog or not
 
  
