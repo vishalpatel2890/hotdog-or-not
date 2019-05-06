@@ -54,8 +54,8 @@ The following arcitechture was our final model.
 | Densely Connected| 71.39%              | 66.40%               | .3926        |
 | CNN              | 82.99%              | 68.66%               | .3885        |
 | CNN W/ Dropout   | 88.54%              | 67.19%               | .4402        |
-| Inception V3     | ----                | -----                | -----        |
-| ResNet50         | ----                | -----                | -----        |
+| Inception V3     | 74.04%              | -----                | -----        |
+| MobileNet        | 80.05%              | 78.39%               | .7283        |
 | VGG16            | ----                | -----                | -----        |
 
 #### Training Next Steps
