@@ -45,7 +45,7 @@ We also tested this model with a dropout layer after the flatten layer.
 
 Last we made use of several transfer learning models. We used Inception V3, ResNet50, and VGG16 with Inception V3 giving us the best results (measured by testing accucary and F1 score). 
 
-The following arcitechture was our final model. 
+The arcitechture for our final model is available here: [Inception V3 Model](https://github.com/vishalpatel2890/hotdog-or-not/blob/master/imagenet_modelsummary.txt)
 
 
 #### Training Results
@@ -54,9 +54,9 @@ The following arcitechture was our final model.
 | Densely Connected| 71.39%              | 66.40%               | .3926        |
 | CNN              | 82.99%              | 68.66%               | .3885        |
 | CNN W/ Dropout   | 88.54%              | 67.19%               | .4402        |
-| Inception V3     | 74.04%              | -----                | -----        |
+| Inception V3     | 88.97%              | 86.09%               | .7993        |
 | MobileNet        | 80.05%              | 78.39%               | .7283        |
-| VGG16            | ----                | -----                | -----        |
+| VGG16            | 93.06%              | 82.91%               | .7479        |
 
 #### Training Next Steps
 
