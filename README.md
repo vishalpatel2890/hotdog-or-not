@@ -58,7 +58,12 @@ The arcitechture for our final model is available here: [Inception V3 Model](htt
 | MobileNet        | 80.05%              | 78.39%               | .7283        |
 | VGG16            | 93.06%              | 82.91%               | .7479        |
 
-#### Training Next Steps
+#### Model API 
+server_test.py contians the code for setting up a Flask REST API for our model that if given a url to an image it will return whether the image is a hot dog or not. This repo can be cloned into an AWS EC2 instance or any cloud computing service and server can be spun up to serve our image classification model. 
 
+#### Next Steps 
+- develop our model by adding layers the Inception V3 transfer model
+- attempt to collect a much larger collection of hot dog images and train a large CNN from scratch
+- build a mobile (React Native) app to allow users to take pictures and recieve a classification of hot dog or not
 
  
