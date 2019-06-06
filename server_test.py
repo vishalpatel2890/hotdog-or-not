@@ -82,5 +82,6 @@ if __name__ == "__main__":
 #to run on ec2
 #connect to ec2 instance
 #git clone repo to instance
+#pip install requirements.txt
 #launch redis with redis-server (check with redis-cli ping)
 #launch server with sudo python server_test.py or nohup python3 server_test.py &
