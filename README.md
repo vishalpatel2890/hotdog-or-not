@@ -1,5 +1,5 @@
 # Hot Dog Or Not Hot Dog
-
+ 
 ### What is it? 
 This is an image classifier that can be used to identify whether an image is a hot dog or not. I have also included code and instructions for building an API endpoint for the classifier that can be hosted on the cloud. 
 
