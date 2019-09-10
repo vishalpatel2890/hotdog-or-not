@@ -23,7 +23,7 @@ Trainable params: 19,276,033
 Non-trainable params: 0
 _________________________________________________________________
 
-Next we assembled a simple convolutional neural network: 
+Next we assembled a simple convolutional neural network:  
 
                               
 | Layer (type)  |      Output Shape    | Param #   |
