@@ -39,7 +39,7 @@ dense_5 (Dense)    |          (None, 1)        |         33
 Total params: 3,006,305
 Trainable params: 3,006,305
 Non-trainable params: 0
-_________________________________________________________________
+_________________________________________________________________ 
 
 We also tested this model with a dropout layer after the flatten layer. 
 
